@@ -11,11 +11,17 @@ Users will encrypt their sensitive data into ciphertexts for the concern of priv
 To use PKAFHE, A NTL library should be intalled firstly. (http://www.shoup.net/ntl/download.html)
 To install NTL on Linux, the conmmands are as follows:
    % gunzip ntl-xxx.tar.gz
+   
    % tar xf ntl-xxx.tar
+   
    % cd ntl-xxx/src
+   
    % ./configure 
+   
    % make
+   
    % make check
+   
    % sudo make install
    
 You can also follow the tutorial provided by NTL. (http://shoup.net/ntl/doc/tour-unix.html)
