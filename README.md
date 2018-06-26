@@ -10,6 +10,7 @@ Users will encrypt their sensitive data into ciphertexts for the concern of priv
 
 To use PKAFHE, A NTL library should be intalled firstly. (http://www.shoup.net/ntl/download.html)
 To install NTL on Linux, the conmmands are as follows:
+  
    % gunzip ntl-xxx.tar.gz
    
    % tar xf ntl-xxx.tar
@@ -29,13 +30,17 @@ You can also follow the tutorial provided by NTL. (http://shoup.net/ntl/doc/tour
 Users can run keyGen algorithm as this, in keygen file in PKAFHE, I generate 2048 bits primes, this setting can be adjusted according to the users' requirement.
 
    % g++ -g -O2 -std=c++11 -pthread -march=native keygen.cpp -o keygen -lntl -lgmp -lm
+   
    % make keygen
+   
    % ./keygen
 
 After generating the secret key and the public parameter, users can encrypted their sensitive data by run enc in PKAFHE. 
 
    % g++ -g -O2 -std=c++11 -pthread -march=native enc.cpp -o enc -lntl -lgmp -lm
+   
    % make enc
+   
    % ./enc
   
 At this point, the users have encrypted their data into ciphertexts, the ciphertexts will be stored in a file named by the user.
@@ -54,14 +59,17 @@ We designed a protocol named as modprime to run the key generation and decryptio
   .../obliv-c/test/oblivc/modprime
   
 Firstly, we should build modprime:
+   
    % make
    
 Then the machine learning model and the user as the two parties run the modprime protocol. We assume the machine learning model's input is c and the users' input is p (secret key) :
 
 The machine learning model:
+   
    % ./a.out 1234 -- c &
    
 The user runs a.out as :
+   
    % ./a.out 1234 localhost p
    
    The the machine learning model and the user can ontain the result c % p.
